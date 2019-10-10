@@ -16,12 +16,40 @@ struct tourType
 	int distance;
 	timeType travelTime;
 };
+
+void tourOut(tourType x)
+{
+	cout << "City Name: " << x.cityName << endl << "Distance: " << x.distance << endl << "travel time: " << x.travelTime.hr << ":" << x.travelTime.min << ":" << x.travelTime.sec << endl;
+}
+
+tourType tourIn()
+{
+	tourType x;
+
+	cout << "Enter city" << endl;
+	cin >> x.cityName;
+	cout << endl << "Enter Distance" << endl;
+	cin >> x.distance;
+	cout << endl << "Enter Time in hours" << endl;
+	cin >> x.travelTime.hr;
+	cout << endl << "Enter time in minutes" << endl;
+	cin >> x.travelTime.min;
+	cout << endl << "Enter time in seconds" << endl;
+	cin >> x.travelTime.sec;
+	cout << endl;
+	return (x);
+}
 int main()
 {
 	tourType destination{ "Nottingham",130,{3,15} };
+	tourOut(destination);
+	destination = tourIn();
+	tourOut(destination);
 
-	
+	return 0;
 }
+
+
 
 // Run program: Ctrl + F5 or Debug > Start Without Debugging menu
 // Debug program: F5 or Debug > Start Debugging menu
